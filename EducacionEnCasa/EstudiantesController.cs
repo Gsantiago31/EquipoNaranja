@@ -54,7 +54,7 @@ namespace EducacionEnCasa
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,Apellido,Edad,Telefono,Direccion")] Estudiantes estudiantes)
+        public async Task<IActionResult> Create([Bind("Id,Tarjeta_identidad,Nombre,Apellido,Edad,Telefono,Direccion")] Estudiantes estudiantes)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace EducacionEnCasa
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Apellido,Edad,Telefono,Direccion")] Estudiantes estudiantes)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Tarjeta_identidad,Nombre,Apellido,Edad,Telefono,Direccion")] Estudiantes estudiantes)
         {
             if (id != estudiantes.Id)
             {

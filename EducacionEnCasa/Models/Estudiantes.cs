@@ -9,6 +9,8 @@ namespace EducacionEnCasa.Models
     {
         public int Id { get; set; }
 
+        public string Tarjeta_identidad { get; set; }
+
         public string Nombre { get; set; }
 
         public string Apellido { get; set; }
