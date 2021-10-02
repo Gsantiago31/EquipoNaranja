@@ -9,7 +9,7 @@ namespace EducacionEnCasa.Models
     {
         public int Id { get; set; }
 
-        public int Cedula_identidad { get; set; }
+        public string Cedula_identidad { get; set; }
 
         public string Nombre { get; set; }
 
