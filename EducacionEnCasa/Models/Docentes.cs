@@ -5,20 +5,20 @@ using System.Threading.Tasks;
 
 namespace EducacionEnCasa.Models
 {
-    public class Estudiantes
+    public class Docentes
     {
         public int Id { get; set; }
 
-        public string Tarjeta_identidad { get; set; }
+        public int Cedula_identidad { get; set; }
 
         public string Nombre { get; set; }
 
         public string Apellido { get; set; }
 
-        public int Edad { get; set; }
-
         public string Telefono { get; set; }
 
         public string Direccion { get; set; }
+
+        public string Nivel_educativo { get; set; }
     }
 }

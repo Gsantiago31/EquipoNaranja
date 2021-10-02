@@ -1,4 +1,4 @@
-﻿@model EducacionEnCasa.Models.Estudiantes
+﻿@model EducacionEnCasa.Models.Docentes
 
 @{
     ViewData["Title"] = "Delete";
@@ -8,14 +8,14 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Estudiantes</h4>
+    <h4>Docentes</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tarjeta_identidad)
+            @Html.DisplayNameFor(model => model.Cedula_identidad)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tarjeta_identidad)
+            @Html.DisplayFor(model => model.Cedula_identidad)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nombre)
@@ -30,12 +30,6 @@
             @Html.DisplayFor(model => model.Apellido)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Edad)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Edad)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Telefono)
         </dt>
         <dd class = "col-sm-10">
@@ -46,6 +40,12 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nivel_educativo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nivel_educativo)
         </dd>
     </dl>
     

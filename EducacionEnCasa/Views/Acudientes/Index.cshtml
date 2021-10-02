@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EducacionEnCasa.Models.Estudiantes>
+﻿@model IEnumerable<EducacionEnCasa.Models.Acudientes>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,16 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Tarjeta_identidad)
+                @Html.DisplayNameFor(model => model.Cedula_identidad)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Apellido)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Edad)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Telefono)
@@ -37,16 +34,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Tarjeta_identidad)
+                @Html.DisplayFor(modelItem => item.Cedula_identidad)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Edad)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Telefono)

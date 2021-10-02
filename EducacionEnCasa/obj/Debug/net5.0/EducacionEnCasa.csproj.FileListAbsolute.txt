@@ -149,3 +149,13 @@ C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\
 C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Estudiantes\Details.cshtml.g.cs
 C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Estudiantes\Edit.cshtml.g.cs
 C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Estudiantes\Index.cshtml.g.cs
+C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Acudientes\Create.cshtml.g.cs
+C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Acudientes\Delete.cshtml.g.cs
+C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Acudientes\Details.cshtml.g.cs
+C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Acudientes\Edit.cshtml.g.cs
+C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Acudientes\Index.cshtml.g.cs
+C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Docentes\Create.cshtml.g.cs
+C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Docentes\Delete.cshtml.g.cs
+C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Docentes\Details.cshtml.g.cs
+C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Docentes\Edit.cshtml.g.cs
+C:\Users\gomez.LAPTOP-NPC39DKO\source\repos\EducacionEnCasa\EducacionEnCasa\obj\Debug\net5.0\Razor\Views\Docentes\Index.cshtml.g.cs

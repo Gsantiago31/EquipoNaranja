@@ -10,22 +10,22 @@ using EducacionEnCasa.Models;
 
 namespace EducacionEnCasa
 {
-    public class EstudiantesController : Controller
+    public class AcudientesController : Controller
     {
         private readonly EducacionEnCasaContext _context;
 
-        public EstudiantesController(EducacionEnCasaContext context)
+        public AcudientesController(EducacionEnCasaContext context)
         {
             _context = context;
         }
 
-        // GET: Estudiantes
+        // GET: Acudientes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Estudiantes.ToListAsync());
+            return View(await _context.Acudientes.ToListAsync());
         }
 
-        // GET: Estudiantes/Details/5
+        // GET: Acudientes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace EducacionEnCasa
                 return NotFound();
             }
 
-            var estudiantes = await _context.Estudiantes
+            var acudientes = await _context.Acudientes
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (estudiantes == null)
+            if (acudientes == null)
             {
                 return NotFound();
             }
 
-            return View(estudiantes);
+            return View(acudientes);
         }
 
-        // GET: Estudiantes/Create
+        // GET: Acudientes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Estudiantes/Create
+        // POST: Acudientes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Tarjeta_identidad,Nombre,Apellido,Edad,Telefono,Direccion")] Estudiantes estudiantes)
+        public async Task<IActionResult> Create([Bind("Id,Cedula_identidad,Nombre,Apellido,Telefono,Direccion")] Acudientes acudientes)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(estudiantes);
+                _context.Add(acudientes);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(estudiantes);
+            return View(acudientes);
         }
 
-        // GET: Estudiantes/Edit/5
+        // GET: Acudientes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace EducacionEnCasa
                 return NotFound();
             }
 
-            var estudiantes = await _context.Estudiantes.FindAsync(id);
-            if (estudiantes == null)
+            var acudientes = await _context.Acudientes.FindAsync(id);
+            if (acudientes == null)
             {
                 return NotFound();
             }
-            return View(estudiantes);
+            return View(acudientes);
         }
 
-        // POST: Estudiantes/Edit/5
+        // POST: Acudientes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Tarjeta_identidad,Nombre,Apellido,Edad,Telefono,Direccion")] Estudiantes estudiantes)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Cedula_identidad,Nombre,Apellido,Telefono,Direccion")] Acudientes acudientes)
         {
-            if (id != estudiantes.Id)
+            if (id != acudientes.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace EducacionEnCasa
             {
                 try
                 {
-                    _context.Update(estudiantes);
+                    _context.Update(acudientes);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EstudiantesExists(estudiantes.Id))
+                    if (!AcudientesExists(acudientes.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace EducacionEnCasa
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(estudiantes);
+            return View(acudientes);
         }
 
-        // GET: Estudiantes/Delete/5
+        // GET: Acudientes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace EducacionEnCasa
                 return NotFound();
             }
 
-            var estudiantes = await _context.Estudiantes
+            var acudientes = await _context.Acudientes
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (estudiantes == null)
+            if (acudientes == null)
             {
                 return NotFound();
             }
 
-            return View(estudiantes);
+            return View(acudientes);
         }
 
-        // POST: Estudiantes/Delete/5
+        // POST: Acudientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var estudiantes = await _context.Estudiantes.FindAsync(id);
-            _context.Estudiantes.Remove(estudiantes);
+            var acudientes = await _context.Acudientes.FindAsync(id);
+            _context.Acudientes.Remove(acudientes);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EstudiantesExists(int id)
+        private bool AcudientesExists(int id)
         {
-            return _context.Estudiantes.Any(e => e.Id == id);
+            return _context.Acudientes.Any(e => e.Id == id);
         }
     }
 }

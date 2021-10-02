@@ -1,4 +1,4 @@
-﻿@model EducacionEnCasa.Models.Estudiantes
+﻿@model EducacionEnCasa.Models.Acudientes
 
 @{
     ViewData["Title"] = "Edit";
@@ -6,7 +6,7 @@
 
 <h1>Edit</h1>
 
-<h4>Estudiantes</h4>
+<h4>Acudientes</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,9 +14,9 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Tarjeta_identidad" class="control-label"></label>
-                <input asp-for="Tarjeta_identidad" class="form-control" />
-                <span asp-validation-for="Tarjeta_identidad" class="text-danger"></span>
+                <label asp-for="Cedula_identidad" class="control-label"></label>
+                <input asp-for="Cedula_identidad" class="form-control" />
+                <span asp-validation-for="Cedula_identidad" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
@@ -27,11 +27,6 @@
                 <label asp-for="Apellido" class="control-label"></label>
                 <input asp-for="Apellido" class="form-control" />
                 <span asp-validation-for="Apellido" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Edad" class="control-label"></label>
-                <input asp-for="Edad" class="form-control" />
-                <span asp-validation-for="Edad" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Telefono" class="control-label"></label>

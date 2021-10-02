@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EducacionEnCasa.Models.Estudiantes>
+﻿@model IEnumerable<EducacionEnCasa.Models.Docentes>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Tarjeta_identidad)
+                @Html.DisplayNameFor(model => model.Cedula_identidad)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
@@ -22,13 +22,13 @@
                 @Html.DisplayNameFor(model => model.Apellido)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Edad)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Telefono)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nivel_educativo)
             </th>
             <th></th>
         </tr>
@@ -37,7 +37,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Tarjeta_identidad)
+                @Html.DisplayFor(modelItem => item.Cedula_identidad)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
@@ -46,13 +46,13 @@
                 @Html.DisplayFor(modelItem => item.Apellido)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Edad)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Telefono)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nivel_educativo)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
