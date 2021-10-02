@@ -21,8 +21,8 @@ namespace EducacionEnCasa.Models
 
         public string Direccion { get; set; }
 
-        public string Id_Acudiente { get; set; }
-        public string Id_Docente { get; set; }
+        public int Id_Acudiente { get; set; }
+        public int Id_Docente { get; set; }
 
     }
 }
