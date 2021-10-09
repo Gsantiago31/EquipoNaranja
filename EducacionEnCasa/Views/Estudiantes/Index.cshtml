@@ -1,5 +1,6 @@
-﻿@model IEnumerable<EducacionEnCasa.Models.Estudiantes>
+﻿@using EducacionEnCasa.ViewsModels;
 
+@model IEnumerable<EducacionEnCasa.Models.Estudiantes>
 @{
     ViewData["Title"] = "Index";
 }
@@ -31,47 +32,48 @@
                 @Html.DisplayNameFor(model => model.Direccion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Id_Acudiente)
+                Acudiente
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Id_Docente)
+                Docente
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tarjeta_identidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Edad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Direccion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id_Acudiente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id_Docente)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (EstudiantesViewsModels item in ViewBag.sListEstudiantes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tarjeta_identidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Edad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Direccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreAcudiente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombresDocente)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

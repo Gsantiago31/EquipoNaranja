@@ -43,13 +43,17 @@
                 <span asp-validation-for="Direccion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Id_Acudiente" class="control-label"></label>
-                <input asp-for="Id_Acudiente" class="form-control" />
+                <label asp-for="Id_Acudiente" class="control-label">Acudiente</label>
+                <select class="form-control" asp-for="Id_Acudiente" asp-items="@(new SelectList(ViewBag.Acudientes, "Id", "Nombre"))">
+                    <option>Seleccione</option>
+                </select>
                 <span asp-validation-for="Id_Acudiente" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Id_Docente" class="control-label"></label>
-                <input asp-for="Id_Docente" class="form-control" />
+                <label asp-for="Id_Docente" class="control-label">Docente</label>
+                <select class="form-control" asp-for="Id_Docente" asp-items="@(new SelectList(ViewBag.Docentes, "Id", "Nombre"))">
+                    <option>Seleccione</option>
+                </select>
                 <span asp-validation-for="Id_Docente" class="text-danger"></span>
             </div>
             <div class="form-group">
