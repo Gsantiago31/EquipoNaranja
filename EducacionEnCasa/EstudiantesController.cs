@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EducacionEnCasa.Data;
 using EducacionEnCasa.Models;
+using EducacionEnCasa.ViewsModels;
 
 namespace EducacionEnCasa
 {
@@ -22,7 +23,34 @@ namespace EducacionEnCasa
         // GET: Estudiantes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Estudiantes.ToListAsync());
+            var sEstudiantes = await (from E in _context.Estudiantes
+                                      join D in _context.Docentes on E.Id_Docente equals D.Id
+                                      join A in _context.Acudientes on E.Id_Acudiente equals A.Id
+                                      select new EstudiantesViewsModels
+                                      {
+                                          Id = E.Id,
+                                          Nombre = E.Nombre,
+                                          Apellido = E.Apellido,
+                                          Telefono = E.Telefono,
+                                          Direccion = E.Direccion,
+                                          Edad = E.Edad,
+                                          Tarjeta_identidad = E.Tarjeta_identidad,
+                                          Id_Docente = E.Id_Docente,
+                                          NombresDocente = D.Nombre,
+                                          ApellidosDocente = D.Apellido,
+                                          TelefonoDocente = D.Telefono,
+                                          DireccionDocente = D.Direccion,
+                                          NivelEducativo = D.Nivel_educativo,
+                                          CC = D.Cedula_identidad,
+                                          Id_Acudiente = E.Id_Acudiente,
+                                          NombreAcudiente = A.Nombre,
+                                          ApellidoAcudiente = A.Apellido,
+                                          TelefonoAcudiente = A.Telefono,
+                                          DireccionAcudiente = A.Direccion,
+                                          CC_Acudiente = A.Cedula_identidad
+                                      }).ToListAsync();
+            ViewBag.sListEstudiantes = sEstudiantes;
+            return View();
         }
 
         // GET: Estudiantes/Details/5
@@ -46,6 +74,9 @@ namespace EducacionEnCasa
         // GET: Estudiantes/Create
         public IActionResult Create()
         {
+            ViewBag.Docentes = _context.Docentes.ToList();
+            ViewBag.Acudientes = _context.Acudientes.ToList();
+
             return View();
         }
 
@@ -72,6 +103,9 @@ namespace EducacionEnCasa
             {
                 return NotFound();
             }
+
+            ViewBag.Docentes = await _context.Docentes.ToListAsync();
+            ViewBag.Acudientes = await _context.Acudientes.ToListAsync();
 
             var estudiantes = await _context.Estudiantes.FindAsync(id);
             if (estudiantes == null)
