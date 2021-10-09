@@ -15,5 +15,13 @@ namespace EducacionEnCasa.Data
         }
 
         public DbSet<EducacionEnCasa.Models.Estudiantes> Estudiantes { get; set; }
+        public DbSet<EducacionEnCasa.Models.Acudientes> Acudientes { get; set; }
+        public DbSet<EducacionEnCasa.Models.Usuarios> Usuarios { get; set; }
+        public DbSet<EducacionEnCasa.Models.Docentes> Docentes { get; set; }
+        public DbSet<EducacionEnCasa.Models.Matricula> Matricula { get; set; }
+        public DbSet<EducacionEnCasa.Models.Curso> Curso { get; set; }
+
     }
+
+
 }

@@ -73,6 +73,7 @@ namespace EducacionEnCasa
                 return NotFound();
             }
 
+            ViewBag.Acudientes = await _context.Acudientes.ToListAsync();
             var estudiantes = await _context.Estudiantes.FindAsync(id);
             if (estudiantes == null)
             {

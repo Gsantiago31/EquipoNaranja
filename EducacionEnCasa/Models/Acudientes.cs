@@ -7,7 +7,7 @@ namespace EducacionEnCasa.Models
 {
     public class Acudientes
     {
-        public int Id { get; set; }
+        public int id { get; set; }
 
         public string Cedula_identidad { get; set; }
 
@@ -18,6 +18,8 @@ namespace EducacionEnCasa.Models
         public string Telefono { get; set; }
 
         public string Direccion { get; set; }
+
+        public int idEstudiante { get; set; }
 
 
     }

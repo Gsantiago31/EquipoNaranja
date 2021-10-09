@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yanneth\\source\\repos\\EquipoNaranja\\EducacionEnCasa\\EducacionEnCasa.csproj": {}
+    "C:\\Users\\max\\source\\repos\\EducacionEnCasa\\EducacionEnCasa.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yanneth\\source\\repos\\EquipoNaranja\\EducacionEnCasa\\EducacionEnCasa.csproj": {
+    "C:\\Users\\max\\source\\repos\\EducacionEnCasa\\EducacionEnCasa.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yanneth\\source\\repos\\EquipoNaranja\\EducacionEnCasa\\EducacionEnCasa.csproj",
+        "projectUniqueName": "C:\\Users\\max\\source\\repos\\EducacionEnCasa\\EducacionEnCasa.csproj",
         "projectName": "EducacionEnCasa",
-        "projectPath": "C:\\Users\\Yanneth\\source\\repos\\EquipoNaranja\\EducacionEnCasa\\EducacionEnCasa.csproj",
-        "packagesPath": "C:\\Users\\Yanneth\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yanneth\\source\\repos\\EquipoNaranja\\EducacionEnCasa\\obj\\",
+        "projectPath": "C:\\Users\\max\\source\\repos\\EducacionEnCasa\\EducacionEnCasa.csproj",
+        "packagesPath": "C:\\Users\\max\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\max\\source\\repos\\EducacionEnCasa\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Yanneth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\max\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
