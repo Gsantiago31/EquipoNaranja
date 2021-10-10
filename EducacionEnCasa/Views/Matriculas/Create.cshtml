@@ -1,0 +1,47 @@
+﻿@model EducacionEnCasa.Models.Matricula
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Matricula</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-label"></label>
+                <input asp-for="Fecha" class="form-control" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEstudiante" class="control-label">Estudiante</label>
+                <select class="form-control" asp-for="IdEstudiante" asp-items="@(new SelectList(ViewBag.Estudiantes,"Id","Nombre"))">
+                    <option>Seleccione</option>
+                </select>
+                <span asp-validation-for="IdEstudiante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdCurso" class="control-label">Curso</label>
+                <select class="form-control" asp-for="IdCurso" asp-items="@(new SelectList(ViewBag.Cursos,"Id","NombreCurso"))">
+                    <option>Seleccione</option>
+                </select>
+                <span asp-validation-for="IdCurso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

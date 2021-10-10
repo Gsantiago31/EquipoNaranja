@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EducacionEnCasa.Models.Curso>
+@using EducacionEnCasa.ViewsModels;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre del Curso
+            </th>
+            <th>
+                Id Docente
+            </th>
+            <th>
+                Nombre del Docente 
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CursoViewsModels item in ViewBag.sListCursos)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDocente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreDocente) @Html.DisplayFor(modelItem => item.ApellidoDocente)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

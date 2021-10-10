@@ -20,9 +20,5 @@ namespace EducacionEnCasa.Models
         public string Telefono { get; set; }
 
         public string Direccion { get; set; }
-
-        public int Id_Acudiente { get; set; }
-        public int Id_Docente { get; set; }
-
     }
 }

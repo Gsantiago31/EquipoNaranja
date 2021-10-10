@@ -1,5 +1,6 @@
 ﻿@model EducacionEnCasa.Models.Acudientes
 
+
 @{
     ViewData["Title"] = "Create";
 }
@@ -12,6 +13,11 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Cedula_identidad" class="control-label"></label>
                 <input asp-for="Cedula_identidad" class="form-control" />
@@ -37,6 +43,14 @@
                 <input asp-for="Direccion" class="form-control" />
                 <span asp-validation-for="Direccion" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="idEstudiante" class="control-label">Estudiante</label>
+                <select class="form-control" asp-for="idEstudiante" asp-items="@(new SelectList(ViewBag.Estudiantes,"Id","Nombre"))">
+                    <option>Seleccione</option>
+                </select>
+                <span asp-validation-for="idEstudiante" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<EducacionEnCasa.Models.Acudientes>
+@using EducacionEnCasa.ViewsModels; 
 
 @{
     ViewData["Title"] = "Index";
@@ -13,7 +14,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Cedula_identidad)
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                CC Acudiente
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
@@ -27,12 +31,25 @@
             <th>
                 @Html.DisplayNameFor(model => model.Direccion)
             </th>
+            <th>
+                ID Estudiante
+            </th>
+            <th>
+                Nombre del Estudiante
+            </th>
+            <th>
+                Apellido del Estudiante
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (AcudientesViewsModels item in ViewBag.sListAcudientes)
+        {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Cedula_identidad)
             </td>
@@ -49,11 +66,20 @@
                 @Html.DisplayFor(modelItem => item.Direccion)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.idEstudiante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEstudiante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoEstudiante)
+            </td>
+            <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

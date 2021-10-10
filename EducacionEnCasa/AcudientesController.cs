@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EducacionEnCasa.Data;
 using EducacionEnCasa.Models;
+using EducacionEnCasa.ViewsModels;
 
 namespace EducacionEnCasa
 {
@@ -22,10 +23,28 @@ namespace EducacionEnCasa
         // GET: Acudientes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Acudientes.ToListAsync());
+            var sAcudientes = await(from A in _context.Acudientes
+                               join E in _context.Estudiantes on A.idEstudiante equals E.Id
+                               select new AcudientesViewsModels
+                               {
+                                   Id = A.id,
+                                   Cedula_identidad =A.Cedula_identidad,
+                                   Nombre = A.Nombre,
+                                   Apellido = A.Apellido,
+                                   Telefono=A.Telefono,
+                                   Direccion=A.Direccion,
+                                   idEstudiante = E.Id,
+                                   NombreEstudiante=E.Nombre,
+                                   ApellidoEstudiante=E.Apellido,
+                                   TelefonoEstudiante=E.Telefono,
+                                   DireccionEstudiante=E.Direccion
+                               }).ToListAsync();
+            ViewBag.sListAcudientes = sAcudientes;
+            //return View(await _context.Acudientes.ToListAsync());
+            return View();
         }
 
-        // GET: Acudientes/Details/5
+        // GET: Estudiantes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,7 +53,7 @@ namespace EducacionEnCasa
             }
 
             var acudientes = await _context.Acudientes
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.id == id);
             if (acudientes == null)
             {
                 return NotFound();
@@ -46,15 +65,16 @@ namespace EducacionEnCasa
         // GET: Acudientes/Create
         public IActionResult Create()
         {
+            ViewBag.Estudiantes = _context.Estudiantes.ToList();
             return View();
         }
 
-        // POST: Acudientes/Create
+        // POST: Estudiantes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Cedula_identidad,Nombre,Apellido,Telefono,Direccion")] Acudientes acudientes)
+        public async Task<IActionResult> Create([Bind("id, Cedula_identidad,Nombre,Apellido,Telefono,Direccion,idEstudiante")] Acudientes acudientes)
         {
             if (ModelState.IsValid)
             {
@@ -72,6 +92,7 @@ namespace EducacionEnCasa
             {
                 return NotFound();
             }
+            ViewBag.Estudiantes = await _context.Estudiantes.ToListAsync();
 
             var acudientes = await _context.Acudientes.FindAsync(id);
             if (acudientes == null)
@@ -86,9 +107,9 @@ namespace EducacionEnCasa
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Cedula_identidad,Nombre,Apellido,Telefono,Direccion")] Acudientes acudientes)
+        public async Task<IActionResult> Edit(int id, [Bind("id,Cedula_identidad,Nombre,Apellido,Telefono,Direccion,idEstudiante")] Acudientes acudientes)
         {
-            if (id != acudientes.Id)
+            if (id != acudientes.id)
             {
                 return NotFound();
             }
@@ -102,7 +123,7 @@ namespace EducacionEnCasa
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AcudientesExists(acudientes.Id))
+                    if (!AcudientesExists(acudientes.id))
                     {
                         return NotFound();
                     }
@@ -125,7 +146,7 @@ namespace EducacionEnCasa
             }
 
             var acudientes = await _context.Acudientes
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.id == id);
             if (acudientes == null)
             {
                 return NotFound();
@@ -134,7 +155,7 @@ namespace EducacionEnCasa
             return View(acudientes);
         }
 
-        // POST: Acudientes/Delete/5
+        // POST: acudientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -147,7 +168,7 @@ namespace EducacionEnCasa
 
         private bool AcudientesExists(int id)
         {
-            return _context.Acudientes.Any(e => e.Id == id);
+            return _context.Acudientes.Any(e => e.id == id);
         }
     }
 }

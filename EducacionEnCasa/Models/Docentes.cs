@@ -20,5 +20,7 @@ namespace EducacionEnCasa.Models
         public string Direccion { get; set; }
 
         public string Nivel_educativo { get; set; }
+
+
     }
 }
